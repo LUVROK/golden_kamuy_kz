@@ -1,0 +1,25 @@
+.Wrapper {
+  position: relative;
+}
+.Wrapper .background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+.watchBtn {
+  position: absolute;
+  top: 60vh;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+  font-size: 52px;
+  font-weight: 200;
+  letter-spacing: 40px;
+  color: #ffffff;
+}

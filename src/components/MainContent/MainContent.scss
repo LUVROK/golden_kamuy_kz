@@ -1,0 +1,29 @@
+.MainContent {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  top: 0vh;
+  margin: 0 auto;
+}
+.MainContent .mixBlendBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: hue;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.MainContent .content {
+  position: relative;
+  width: 60%;
+  height: 100vh;
+  top: 0vh;
+  margin: 0 auto;
+  //   background-color: rgb(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 318px;
+  color: red;
+}

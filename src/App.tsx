@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "locomotive-scroll/dist/locomotive-scroll.css";
+
+import "./App.css";
+import Wrapper from "./components/Wrapper/Wrapper";
+import MainContent from "./components/MainContent/MainContent";
+import ScrollTriggerProxy from "./components/ScrollTriggerProxy";
+import { useRef } from "react";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
 function App() {
+  const containerRef = useRef(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LocomotiveScrollProvider
+      options={{
+        smooth: true,
+        InertiaPlugin: 0.55,
+        smartphone: {
+          smooth: true,
+        },
+        tablet: {
+          smooth: true,
+        },
+      }}
+      watch={[]}
+      containerRef={containerRef}
+    >
+      <div className="App" id="App" data-scroll-container ref={containerRef}>
+        <ScrollTriggerProxy />
+        <Wrapper />
+        <MainContent />
+      </div>
+    </LocomotiveScrollProvider>
   );
 }
 
