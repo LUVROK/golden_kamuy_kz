@@ -1,0 +1,183 @@
+.Auth {
+  position: absolute;
+  background-color: #ffffff;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+.Auth .form {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.Auth .Title {
+  position: absolute;
+  top: 16%;
+  left: 0;
+  right: 0;
+  width: auto;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Poppins-Regular";
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: initial;
+  color: #0e0e0e;
+}
+.Auth .cantLog {
+  position: absolute;
+  top: 74%;
+  left: 0;
+  right: 0;
+  width: auto;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: initial;
+  color: #0e0e0e;
+  cursor: pointer;
+}
+.Auth .CreateAcc {
+  position: absolute;
+  top: 4%;
+  left: 0;
+  right: 5%;
+  width: auto;
+  text-align: right;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: initial;
+  color: #0e0e0e;
+  cursor: pointer;
+}
+.Auth .form .middle {
+  position: relative;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #6e6e6e;
+  font-size: 9.75px;
+}
+.Auth .form .middle::before {
+  content: "";
+  position: relative;
+  height: 40%;
+  width: 1px;
+  background-color: #e7e7e7;
+}
+.Auth .form .middle::after {
+  content: "";
+  position: relative;
+  height: 40%;
+  width: 1px;
+  background-color: #e7e7e7;
+}
+.Auth .form .middle .middle_text {
+  position: relative;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Auth .form .Left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Auth .form .Right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Auth .form button {
+  position: relative;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 15px;
+  border: none;
+  outline: none;
+  background-color: #f2f2f2;
+  color: #6e6e6e;
+  cursor: pointer;
+}
+.Auth .form button svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+}
+.Auth .form .Right button {
+  min-width: 326px;
+  min-height: 55px;
+  border: 1px solid #000000;
+  color: #000000;
+  background-color: #ffffff;
+  font-family: "Poppins-Regular";
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  transition: all 0.35s ease-out;
+}
+.Auth .form .Right button:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06), 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+.Auth .form input,
+.Auth .form button {
+  margin-bottom: 15px;
+}
+.Auth .form input {
+  padding: 13px 15px 19px 7px;
+  color: #6e6e6e;
+  border-bottom: 1px solid rgba(14, 14, 14, 0.6);
+  width: 327px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 400;
+}
+.Auth .form input::-webkit-input-placeholder {
+  color: #6e6e6e;
+  font-size: 10.5px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.Auth .form input:-moz-placeholder {
+  color: #6e6e6e;
+  font-size: 10.5px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.Auth .form input:-ms-input-placeholder {
+  color: #6e6e6e;
+  font-size: 10.5px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.Auth .form input::placeholder {
+  color: #6e6e6e;
+  font-size: 10.5px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+input {
+  outline: none;
+  border: none;
+}
