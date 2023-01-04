@@ -3,6 +3,8 @@ import { useState, useEffect, useRef } from "react";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 import { useSelector, useDispatch } from "react-redux";
 import { createSelector } from "reselect";
+import Man from "../../images/man.png";
+import backgroundBlur from "../../images/backgroundBlur.png";
 
 type State = {
   message: string;
@@ -36,6 +38,12 @@ const Wrapper = () => {
         <div className="watchBtn" onClick={() => HandleScroll("#MainContent")} data-scroll data-scroll-speed="20">
           WATCH SERIES
         </div>
+      </div>
+      <div className="Manimg" data-scroll data-scroll-sticky data-scroll-target="#App">
+        <img src={Man} alt="" className="Man_Cool_He_is_right" data-scroll data-scroll-speed="-7" data-scroll-position="left" data-scroll-direction="horizontal" />
+      </div>
+      <div className="backgroundBlur" data-scroll data-scroll-sticky data-scroll-target="#App">
+        <img src={backgroundBlur} alt="" className="backgroundBlur_Cool_He_is_right" />
       </div>
     </div>
   );

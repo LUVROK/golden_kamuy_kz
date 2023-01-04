@@ -7,25 +7,22 @@ export class Snowflake {
   constructor() {
     this.x = 0;
     this.y = 0;
-    this.radius = Math.random() * 0.5 + 0.25;
-    this.speed = Math.random() * 0.25 + 0.125;
+    this.radius = Math.random() * 0.5 + 0.35;
+    this.speed = Math.random() * 0.35 + 0.2;
   }
 
-  // Initialize snowflake position and size
   init() {
     this.x = Math.random() * window.innerWidth;
-    this.y = Math.random() * window.innerHeight * 1.2;
+    this.y = Math.random() * window.innerHeight;
   }
 
-  // Update snowflake position
   update() {
     this.y += this.speed;
-    if (this.y > window.innerHeight * 1.2) {
+    if (this.y > window.innerHeight) {
       this.init();
     }
   }
 
-  // Draw snowflake on canvas
   draw(ctx: CanvasRenderingContext2D) {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);

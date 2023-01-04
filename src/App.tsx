@@ -5,13 +5,15 @@ import Wrapper from "./components/Wrapper/Wrapper";
 import MainContent from "./components/MainContent/MainContent";
 import ScrollTriggerProxy from "./components/ScrollTriggerProxy";
 import { useRef, useState, useEffect } from "react";
-import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import Loader from "./components/Loader/Loader";
 import background_img from "./images/background.jpg";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { Snowflake } from "./utils";
 import "./fonts/fonts.css";
 import { Gmail, Facebook, Google, Github, nulla, user } from "./actions";
 import { connect } from "react-redux";
+import $ from "jquery";
+import Nav from "./components/nav/nav";
 
 const mapStateToProps = (state: any) => {
   return { counter: state.counter, User: state.User };
@@ -55,7 +57,7 @@ function App(props: any) {
           console.log(err);
         });
     };
-    getUser();
+    // getUser();
   }, []);
 
   useEffect(() => {
@@ -94,9 +96,9 @@ function App(props: any) {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight * 1.2;
+    canvas.height = window.innerHeight;
     const snowflakes: Snowflake[] = [];
-    for (let i = 0; i < 2000; i++) {
+    for (let i = 0; i < 750; i++) {
       snowflakes.push(new Snowflake());
     }
     for (let i = 0; i < snowflakes.length; i++) {
@@ -111,6 +113,28 @@ function App(props: any) {
       }
     };
     animate();
+
+    // document.body.addEventListener("scroll", function () {
+    //   console.log(snowflakes);
+    //   for (let i = 0; i < snowflakes.length; i++) {
+    //     snowflakes[i].speed = snowflakes[i].speed * 5;
+    //     // snowflakes[i].draw(ctx);
+    //   }
+    // });
+
+    // $("html").mousemove(function (e) {
+    //   let xpos = e.pageX;
+    //   let ypos = e.pageY;
+
+    //   $("body").addClass("go");
+
+    //   var position = {
+    //     left: xpos,
+    //     top: ypos,
+    //   };
+
+    //   $(".pulse").css(position);
+    // });
   }, []);
 
   return (
@@ -128,14 +152,15 @@ function App(props: any) {
       watch={[]}
       containerRef={containerRef}
     >
-      {Loaded ? null : <Loader />}
       <div className="App" id="App" data-scroll-container ref={containerRef}>
+        {/* <div className="pulse"></div> */}
+        <canvas ref={canvasRef} className="canvasSnow" data-scroll data-scroll-sticky data-scroll-target="#App" />
         {Loaded ? null : <Loader />}
+        <Nav />
         <ScrollTriggerProxy />
         <Wrapper />
         <MainContent />
-        <img src={background_img} alt="" className="background_img" />
-        <canvas ref={canvasRef} className="canvasSnow" data-scroll data-scroll-speed="-1" />
+        {/* <img src={background_img} alt="" className="background_img" /> */}
       </div>
     </LocomotiveScrollProvider>
   );

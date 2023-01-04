@@ -4,6 +4,7 @@
   height: 100vh;
   top: 0vh;
   margin: 0 auto;
+  z-index: 1500;
 }
 .MainContent .mixBlendBack {
   position: absolute;
@@ -12,20 +13,19 @@
   width: 100%;
   height: 100%;
   mix-blend-mode: hue;
-  background-color: rgba(255, 255, 255, 0.6);
 }
 .MainContent .content {
   position: relative;
   width: 60%;
   height: 100vh;
-  top: 0vh;
+  top: 2.5vh;
   margin: 0 auto;
   //   background-color: rgb(255, 255, 255, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 8px;
-  color: #000;
+  color: #ffffff;
   text-transform: uppercase;
 }
 .logout {
@@ -37,7 +37,55 @@
   margin-left: auto;
   cursor: pointer;
   z-index: 9999;
-  color: #000000;
+  color: #ffffff;
   font-weight: 600;
   font-size: 22px;
+}
+
+.cicada {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url(../../images/cicada.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.gold1block {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 25vh;
+  height: 25vh;
+  background: url(../../images/gold1.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  z-index: 200;
+}
+.gold1 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gold2block {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 25vh;
+  height: 25vh;
+  background: url(../../images/gold2.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  z-index: 200;
+}
+.gold2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
