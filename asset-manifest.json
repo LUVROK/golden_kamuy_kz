@@ -1,25 +1,30 @@
 {
   "files": {
-    "main.css": "/golden_kamuy_kz/static/css/main.e00ef1fa.css",
-    "main.js": "/golden_kamuy_kz/static/js/main.b5ae4e15.js",
+    "main.css": "/golden_kamuy_kz/static/css/main.7e7f45b9.css",
+    "main.js": "/golden_kamuy_kz/static/js/main.1ba8a2b1.js",
     "static/js/787.714e2d40.chunk.js": "/golden_kamuy_kz/static/js/787.714e2d40.chunk.js",
+    "static/media/Inter.ttf": "/golden_kamuy_kz/static/media/Inter.aadb65ac45347ff46699.ttf",
     "static/media/man.png": "/golden_kamuy_kz/static/media/man.645dc91a4c6f5542b31c.png",
     "static/media/cicada.png": "/golden_kamuy_kz/static/media/cicada.5c2e1e8b5b6c0def8fe4.png",
+    "static/media/MegaBird.png": "/golden_kamuy_kz/static/media/MegaBird.bdd8153b6d1c110e4480.png",
     "static/media/backgroundBlur.png": "/golden_kamuy_kz/static/media/backgroundBlur.c93809013122282ffdbd.png",
     "static/media/Poppins-ExtraLight.ttf": "/golden_kamuy_kz/static/media/Poppins-ExtraLight.333cb30c20e31999802a.ttf",
     "static/media/Poppins-Light.ttf": "/golden_kamuy_kz/static/media/Poppins-Light.7641a0f76ca9ef6c252c.ttf",
+    "static/media/flowersGold1.png": "/golden_kamuy_kz/static/media/flowersGold1.8f2ae2d8c59cf58427f0.png",
     "static/media/Poppins-Regular.ttf": "/golden_kamuy_kz/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/meme2.png": "/golden_kamuy_kz/static/media/meme2.3d7b72937362309fe6fc.png",
     "static/media/Poppins-Medium.ttf": "/golden_kamuy_kz/static/media/Poppins-Medium.4e2dc0d293b53de4df92.ttf",
+    "static/media/meme.png": "/golden_kamuy_kz/static/media/meme.cf529e80ad69ac16c1f2.png",
     "static/media/gold2.png": "/golden_kamuy_kz/static/media/gold2.8f8647c0c71ab5d2a4a5.png",
     "static/media/gold1.png": "/golden_kamuy_kz/static/media/gold1.237c07a594a93ab4b827.png",
     "static/media/Helvetica-Neue-Medium-Extended.ttf": "/golden_kamuy_kz/static/media/Helvetica-Neue-Medium-Extended.372d58a9bf10285baebe.ttf",
     "index.html": "/golden_kamuy_kz/index.html",
-    "main.e00ef1fa.css.map": "/golden_kamuy_kz/static/css/main.e00ef1fa.css.map",
-    "main.b5ae4e15.js.map": "/golden_kamuy_kz/static/js/main.b5ae4e15.js.map",
+    "main.7e7f45b9.css.map": "/golden_kamuy_kz/static/css/main.7e7f45b9.css.map",
+    "main.1ba8a2b1.js.map": "/golden_kamuy_kz/static/js/main.1ba8a2b1.js.map",
     "787.714e2d40.chunk.js.map": "/golden_kamuy_kz/static/js/787.714e2d40.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e00ef1fa.css",
-    "static/js/main.b5ae4e15.js"
+    "static/css/main.7e7f45b9.css",
+    "static/js/main.1ba8a2b1.js"
   ]
 }
