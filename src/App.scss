@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background-color: #20193f;
+  transition: background-color 3.5s ease-out;
 }
 
 .c-scrollbar_thumb {
@@ -25,6 +25,9 @@
   object-fit: cover;
   z-index: 101;
   top: 0vh;
+}
+.canvasSnow1 {
+  transition: opacity 3.5s ease-out;
 }
 
 .pulse,

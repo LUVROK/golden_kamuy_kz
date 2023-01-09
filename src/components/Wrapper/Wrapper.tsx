@@ -1,10 +1,11 @@
 import "./Wrapper.scss";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 import { useSelector, useDispatch } from "react-redux";
 import { createSelector } from "reselect";
 import Man from "../../images/man.png";
 import backgroundBlur from "../../images/backgroundBlur.png";
+import Block_About from "./block_About/block_About";
 
 type State = {
   message: string;
@@ -28,14 +29,33 @@ const Wrapper = () => {
       duration: "2000",
       easing: [0.25, 0.0, 0.35, 1.0],
     });
-    // const Coint = useSelector((state: State) => state.count);
-    // console.log(count);
   };
 
+  useEffect(() => {
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutationRecord) {
+        var rect = (document.getElementById("watchBtn") as HTMLElement).getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.675 && rect.top > window.innerHeight * 0.45) {
+          (document.querySelector(".watchBtn") as any).style.opacity = 0.5;
+        } else if (rect.top <= window.innerHeight * 0.45 && rect.top > window.innerHeight * 0.325) {
+          (document.querySelector(".watchBtn") as any).style.opacity = 0.25;
+        } else if (rect.top <= window.innerHeight * 0.325) {
+          (document.querySelector(".watchBtn") as any).style.opacity = 0;
+        } else {
+          (document.querySelector(".watchBtn") as any).style.opacity = 1;
+        }
+      });
+    });
+
+    var target = document.getElementById("watchBtn");
+    observer.observe(target as any, { attributes: true, attributeFilter: ["style"] });
+  }, []);
+
   return (
-    <div className="Wrapper">
+    <div className="Wrapper" id="Wrapper">
+      <Block_About />
       <div className="background" data-scroll data-scroll-sticky data-scroll-target="#App">
-        <div className="watchBtn" onClick={() => HandleScroll("#MainContent")} data-scroll data-scroll-speed="20">
+        <div className="watchBtn" id="watchBtn" style={{ opacity: 1 }} onClick={() => HandleScroll("#MainContent")} data-scroll data-scroll-position="top" data-scroll-speed="20">
           WATCH SERIES
         </div>
       </div>

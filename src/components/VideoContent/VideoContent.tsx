@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { golden_kamuy } from "../../utils";
 import { _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, s_1, s_2, s_3, s_4 } from "../../actions";
 import { connect } from "react-redux";
 import "./VideoContent.scss";
+import axios from "axios";
 
 const mapStateToProps = (state: any) => {
   return { actionVideo: state.actionVideo, season: state.season };
@@ -71,6 +72,14 @@ const VideoContent = (props: any) => {
     Object.values(massPropsFuncsSeason)[i]();
     setActiveSeason(value);
   };
+
+  useEffect(() => {
+    async function getlnks() {
+      const data = await axios.get("http://localhost:5000/auth/getLinks");
+      console.log(data);
+    }
+    getlnks();
+  }, []);
 
   return (
     <div className="VideoContent">

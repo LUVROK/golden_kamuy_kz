@@ -12,12 +12,26 @@ body {
   user-select: none;
   overscroll-behavior: none;
   overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0);
   /* cursor: none; */
 }
 
 a {
   text-decoration: none;
-  color: #ffffff;
+  color: #ae8867;
+  border: none;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
 }
 
 * {
@@ -72,4 +86,8 @@ html.has-scroll-smooth {
 *::after {
   margin: 0;
   padding: 0;
+}
+
+html {
+  background-color: rgba(0, 0, 0, 0);
 }

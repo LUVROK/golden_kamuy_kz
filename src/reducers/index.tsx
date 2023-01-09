@@ -4,6 +4,7 @@ type Action = { type: "Github" } | { type: "Facebook" } | { type: "Google" } | {
 type ActionVideo = { type: "_1" } | { type: "_2" } | { type: "_3" } | { type: "_4" } | { type: "_5" } | { type: "_6" } | { type: "_7" } | { type: "_8" } | { type: "_9" } | { type: "_10" } | { type: "_11" } | { type: "_12" };
 type ActionSeason = { type: "s_1" } | { type: "s_2" } | { type: "s_3" } | { type: "s_4" };
 type ActionUser = { type: any };
+type Profile = { type: "CLOSE" } | { type: "OPEN" };
 
 const counter = (state = "", action: Action) => {
   switch (action.type) {
@@ -17,6 +18,17 @@ const counter = (state = "", action: Action) => {
       return (state = `${action.type} - `);
     case "none":
       return (state = `none`);
+    default:
+      return state;
+  }
+};
+
+const openProfile = (state = "", action: Profile) => {
+  switch (action.type) {
+    case "CLOSE":
+      return (state = `CLOSE`);
+    case "OPEN":
+      return (state = `OPEN`);
     default:
       return state;
   }
@@ -82,6 +94,7 @@ const rootReducer = combineReducers({
   actionVideo,
   season,
   User,
+  openProfile,
 });
 
 export default rootReducer;

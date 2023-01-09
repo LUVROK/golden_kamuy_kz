@@ -67,3 +67,9 @@ export const nulla = () => {
 export const user = (objectUser: any) => {
   return { type: objectUser };
 };
+export const CLOSE = () => {
+  return { type: "CLOSE" };
+};
+export const OPEN = () => {
+  return { type: "OPEN" };
+};

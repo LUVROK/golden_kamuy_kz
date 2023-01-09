@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./Auth.scss";
-import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
 import { Gmail, Facebook, Google, Github, nulla, user } from "../../actions";
 import $ from "jquery";
@@ -32,13 +31,13 @@ const Auth = (props: any) => {
   }, []);
 
   const google = () => {
-    window.open("http://localhost:5000/auth/google", "_self");
+    // window.open("https://goldenkamuy.kz/auth/google", "_self");
   };
   const github = () => {
-    window.open("http://localhost:5000/auth/github", "_self");
+    // window.open("https://goldenkamuy.kz/auth/github", "_self");
   };
   const facebook = () => {
-    window.open("http://localhost:5000/auth/facebook", "_self");
+    // window.open("https://goldenkamuy.kz/auth/facebook", "_self");
   };
 
   return (
@@ -47,7 +46,13 @@ const Auth = (props: any) => {
         <div className="Left">
           <input type={"email"} placeholder="email" id="email" name="email" />
           <input type={"password"} placeholder="password" id="password" name="password" />
-          <button type="button" onClick={props.Gmail}>
+          <button
+            type="button"
+            onClick={() => {
+              props.Google();
+              google();
+            }}
+          >
             LOG IN
           </button>
         </div>
@@ -55,7 +60,13 @@ const Auth = (props: any) => {
           <div className="middle_text">OR</div>
         </div>
         <div className="Right">
-          <button type="button" onClick={(props.Google, google)}>
+          <button
+            type="button"
+            onClick={() => {
+              props.Google();
+              google();
+            }}
+          >
             <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_1_460)">
                 <path fillRule="evenodd" clipRule="evenodd" d="M18.3354 7.36401H9.85938V10.845H14.7034C14.6031 11.3956 14.3923 11.9202 14.0836 12.387C13.7749 12.8538 13.3748 13.2532 12.9074 13.561V15.82H15.8154C17.5174 14.253 18.4994 11.945 18.4994 9.20501C18.4994 8.56601 18.4424 7.95301 18.3354 7.36401Z" fill="#4285F4" />
@@ -66,13 +77,25 @@ const Auth = (props: any) => {
             </svg>
             <span>Continue with Google</span>
           </button>
-          <button type="button" onClick={(props.Facebook, facebook)}>
+          <button
+            type="button"
+            onClick={() => {
+              props.Facebook();
+              facebook();
+            }}
+          >
             <svg width="19" height="18" viewBox="0 0 26 47" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M23.4946 26.6408L24.7992 18.3593H16.763V12.9764C16.763 10.7119 17.885 8.49921 21.4725 8.49921H25.1775V1.44704C23.0199 1.10328 20.8398 0.917308 18.6547 0.890625C12.0405 0.890625 7.72233 4.86313 7.72233 12.0447V18.3593H0.390625V26.6408H7.72233V46.6715H16.763V26.6408H23.4946Z" fill="#337FFF" />
             </svg>
             <span>Continue with Facebook</span>
           </button>
-          <button type="button" onClick={(props.Github, github)}>
+          <button
+            type="button"
+            onClick={() => {
+              props.Github();
+              github();
+            }}
+          >
             <svg width="19" height="18" viewBox="0 0 52 50" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 fillRule="evenodd"

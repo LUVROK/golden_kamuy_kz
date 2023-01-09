@@ -1,5 +1,6 @@
 .Wrapper {
   position: relative;
+  transition: opacity 1s ease-in-out;
 }
 .Wrapper .background {
   position: relative;
@@ -10,7 +11,7 @@
 
 .watchBtn {
   position: absolute;
-  top: 60vh;
+  top: 87.5vh;
   left: 0;
   right: 0;
   margin: auto;
@@ -20,6 +21,7 @@
   letter-spacing: 40px;
   color: #ffffff;
   cursor: pointer;
+  transition: all 0.35s ease-out;
 }
 
 .Man_Cool_He_is_right {
@@ -50,4 +52,5 @@
   height: 85vh;
   width: auto;
   z-index: 190;
+  // transition: all 0.35s ease-out;
 }

@@ -1,22 +1,21 @@
 import "locomotive-scroll/dist/locomotive-scroll.css";
 
-import "./App.css";
+import "./App.scss";
 import Wrapper from "./components/Wrapper/Wrapper";
 import MainContent from "./components/MainContent/MainContent";
 import ScrollTriggerProxy from "./components/ScrollTriggerProxy";
 import { useRef, useState, useEffect } from "react";
-import Loader from "./components/Loader/Loader";
-import background_img from "./images/background.jpg";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { Snowflake } from "./utils";
 import "./fonts/fonts.css";
 import { Gmail, Facebook, Google, Github, nulla, user } from "./actions";
 import { connect } from "react-redux";
-import $ from "jquery";
 import Nav from "./components/nav/nav";
+import Soon from "./components/SOON/soon";
+import { motion } from "framer-motion";
 
 const mapStateToProps = (state: any) => {
-  return { counter: state.counter, User: state.User };
+  return { counter: state.counter, User: state.User, openProfile: state.openProfile };
 };
 
 const mapDispatchToProps = {
@@ -34,10 +33,11 @@ function App(props: any) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const [user, setUser] = useState(null);
+  const [activeSoon, setActiveSoon] = useState(false);
 
   useEffect(() => {
     const getUser = () => {
-      fetch("http://localhost:5000/auth/login/success", {
+      fetch("https://goldenkamuy.kz/auth/login/success", {
         method: "GET",
         credentials: "include",
         headers: {
@@ -59,6 +59,48 @@ function App(props: any) {
     };
     // getUser();
   }, []);
+
+  useEffect(() => {
+    if (props.openProfile) {
+      props.openProfile === "OPEN" ? animationOpenProfileStart() : animationCloseProfileStart();
+    }
+  }, [props.openProfile]);
+
+  function animationOpenProfileStart() {
+    setTimeout(() => {
+      (document.querySelector(".MainContent") as HTMLElement).style.pointerEvents = "none";
+      (document.querySelector(".Wrapper") as HTMLElement).style.pointerEvents = "none";
+      (document.querySelector(".navbar") as HTMLElement).style.pointerEvents = "none";
+
+      (document.querySelector(".MainContent") as HTMLElement).style.opacity = "0";
+      (document.querySelector(".Wrapper") as HTMLElement).style.opacity = "0";
+      (document.querySelector("nav") as HTMLElement).style.opacity = "0";
+
+      // (document.querySelector(".App") as HTMLElement).style.backgroundColor = "#000000";
+      // (document.querySelector(".canvasSnow1") as HTMLElement).style.opacity = "0";
+
+      setTimeout(() => {
+        setActiveSoon(!activeSoon);
+      }, 1000);
+      console.log("OPEN");
+    }, 500);
+
+    // console.log((document.querySelector(".Soon") as HTMLElement).style.display);
+    // console.log((document.querySelector(".Soon") as HTMLElement).style.transform);
+    // (document.querySelector(".Soon") as HTMLElement).style.display = "flex";
+    // (document.querySelector(".Soon") as HTMLElement).style.transform = "translateY(0%)";
+    // console.log((document.querySelector(".Soon") as HTMLElement).style.display);
+    // console.log((document.querySelector(".Soon") as HTMLElement).style.transform);
+  }
+
+  function animationCloseProfileStart() {
+    setActiveSoon(!activeSoon);
+    console.log("CLOSE");
+    // (document.querySelector(".Soon") as HTMLElement).style.transform = "translateY(-100%)";
+    // setTimeout(() => {
+    //   (document.querySelector(".Soon") as HTMLElement).style.display = "none";
+    // }, 1000);
+  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -152,14 +194,28 @@ function App(props: any) {
       watch={[]}
       containerRef={containerRef}
     >
-      <div className="App" id="App" data-scroll-container ref={containerRef}>
+      <div
+        className="App"
+        id="App"
+        data-scroll-container
+        ref={containerRef}
+        style={{
+          backgroundColor: "#20193f",
+        }}
+      >
         {/* <div className="pulse"></div> */}
-        <canvas ref={canvasRef} className="canvasSnow" data-scroll data-scroll-sticky data-scroll-target="#App" />
-        {Loaded ? null : <Loader />}
-        <Nav />
+        <canvas ref={canvasRef} className="canvasSnow canvasSnow1" data-scroll data-scroll-sticky data-scroll-target="#App" style={{ opacity: "1" }} />
         <ScrollTriggerProxy />
-        <Wrapper />
-        <MainContent />
+        {/* {Loaded ? null : <Loader />} */}
+        {activeSoon ? (
+          <Soon />
+        ) : (
+          <>
+            <Nav />
+            <Wrapper />
+            <MainContent />
+          </>
+        )}
         {/* <img src={background_img} alt="" className="background_img" /> */}
       </div>
     </LocomotiveScrollProvider>

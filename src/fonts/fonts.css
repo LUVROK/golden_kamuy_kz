@@ -18,3 +18,15 @@
   font-family: "Helvetica-Neue-Medium-Extended";
   src: url(./Helvetica-Neue-Medium-Extended.ttf) format("truetype");
 }
+@font-face {
+  font-family: "Inter";
+  src: url(./Inter.ttf) format("truetype");
+}
+@font-face {
+  font-family: "LOMBOK_REGULAR";
+  src: url(./LOMBOK_REGULAR.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Inter-Thin";
+  src: url(./Inter-Thin.ttf) format("truetype");
+}

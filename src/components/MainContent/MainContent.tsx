@@ -2,6 +2,7 @@ import "./MainContent.scss";
 import Auth from "../Auth/Auth";
 import VideoContent from "../VideoContent/VideoContent";
 import { connect } from "react-redux";
+import { useEffect } from "react";
 
 const mapStateToProps = (state: any) => {
   return { counter: state.counter, User: state.User };
@@ -9,16 +10,17 @@ const mapStateToProps = (state: any) => {
 
 const MainContent = (props: any) => {
   const logout = () => {
-    window.open("http://localhost:5000/auth/logout", "_self");
+    // window.open("http://localhost:5000/auth/logout", "_self");
   };
 
   return (
     <div className="MainContent" id="MainContent">
-      {props.counter ? (
-        <div className="logout" onClick={logout}>
-          LOG OUT
-        </div>
-      ) : null}
+      {props.counter
+        ? // <div className="logout" onClick={logout}>
+          //   LOG OUT
+          // </div>
+          null
+        : null}
       {/* <div className="mixBlendBack"></div> */}
       <div className="cicada" data-scroll data-scroll-speed="15"></div>
       <div className="gold1block">
