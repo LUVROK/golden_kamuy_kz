@@ -206,6 +206,26 @@ const Soon = () => {
 
     //   // start calling updateCanvas once the image is loaded
     //   img.onload = updateCanvas;
+
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutationRecord) {
+        var rect = (document.getElementById("js-canvas") as HTMLElement).getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.675 && rect.top > window.innerHeight * 0.45) {
+          (document.querySelector("js-canvas") as any).style.opacity = 0.5;
+        } else if (rect.top <= window.innerHeight * 0.45 && rect.top > window.innerHeight * 0.325) {
+          (document.querySelector("js-canvas") as any).style.opacity = 0.25;
+        } else if (rect.top <= window.innerHeight * 0.325) {
+          (document.querySelector("js-canvas") as any).style.opacity = 0;
+          (document.querySelector("js-canvas") as any).style.display = "none";
+          (document.querySelector("Soon") as any).style.cursor = "auto";
+        } else {
+          (document.querySelector("js-canvas") as any).style.opacity = 1;
+        }
+      });
+    });
+
+    var target = document.getElementById("js-canvas");
+    observer.observe(target as any, { attributes: true, attributeFilter: ["style"] });
   }, []);
 
   function getRandomArbitrary(min: number, max: number) {
@@ -235,7 +255,7 @@ const Soon = () => {
   };
 
   return (
-    <motion.div className="Soon" id="Soon" variants={container} initial="active" animate="inactive">
+    <motion.div className="Soon" id="Soon" variants={container} initial="active" animate="inactive" style={{ cursor: "none" }}>
       <motion.div className="SoonText" variants={item}>
         <span id="S">S</span>
         <span id="O">O</span>
@@ -246,7 +266,7 @@ const Soon = () => {
       <motion.div className="plusesAnim" variants={item}>
         <div className="plusesInfBlock"></div>
       </motion.div>
-      <canvas className="js-canvas" id="js-canvas"></canvas>
+      {/* <div className="Soon_my-projects"></div> */}
     </motion.div>
   );
 };

@@ -206,6 +206,9 @@ function App(props: any) {
         {/* <div className="pulse"></div> */}
         <canvas ref={canvasRef} className="canvasSnow canvasSnow1" data-scroll data-scroll-sticky data-scroll-target="#App" style={{ opacity: "1" }} />
         <ScrollTriggerProxy />
+        <div className="canvasBlock" data-scroll data-scroll-sticky data-scroll-target="#App">
+          <canvas className="js-canvas" id="js-canvas"></canvas>
+        </div>
         {/* {Loaded ? null : <Loader />} */}
         {activeSoon ? (
           <Soon />
