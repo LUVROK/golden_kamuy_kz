@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/golden_kamuy_kz/static/css/main.9dbc9459.css",
-    "main.js": "/golden_kamuy_kz/static/js/main.77febe2e.js",
+    "main.css": "/golden_kamuy_kz/static/css/main.739de2ed.css",
+    "main.js": "/golden_kamuy_kz/static/js/main.31786757.js",
     "static/js/787.714e2d40.chunk.js": "/golden_kamuy_kz/static/js/787.714e2d40.chunk.js",
     "static/media/Inter.ttf": "/golden_kamuy_kz/static/media/Inter.aadb65ac45347ff46699.ttf",
     "static/media/man.png": "/golden_kamuy_kz/static/media/man.645dc91a4c6f5542b31c.png",
@@ -22,12 +22,12 @@
     "static/media/LOMBOK_REGULAR.ttf": "/golden_kamuy_kz/static/media/LOMBOK_REGULAR.d7b6e1aa112b36b85378.ttf",
     "static/media/Helvetica-Neue-Medium-Extended.ttf": "/golden_kamuy_kz/static/media/Helvetica-Neue-Medium-Extended.372d58a9bf10285baebe.ttf",
     "index.html": "/golden_kamuy_kz/index.html",
-    "main.9dbc9459.css.map": "/golden_kamuy_kz/static/css/main.9dbc9459.css.map",
-    "main.77febe2e.js.map": "/golden_kamuy_kz/static/js/main.77febe2e.js.map",
+    "main.739de2ed.css.map": "/golden_kamuy_kz/static/css/main.739de2ed.css.map",
+    "main.31786757.js.map": "/golden_kamuy_kz/static/js/main.31786757.js.map",
     "787.714e2d40.chunk.js.map": "/golden_kamuy_kz/static/js/787.714e2d40.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9dbc9459.css",
-    "static/js/main.77febe2e.js"
+    "static/css/main.739de2ed.css",
+    "static/js/main.31786757.js"
   ]
 }
