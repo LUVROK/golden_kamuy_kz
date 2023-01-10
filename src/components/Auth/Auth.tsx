@@ -24,8 +24,11 @@ const Auth = (props: any) => {
     if (Left && middle) {
       if (Left > middle) {
         $(".middle").css("height", Left);
-      } else {
+      } else if (window.innerWidth >= 1080) {
         $(".Left").css("height", middle);
+      }
+      else if (window.innerWidth < 1080) {
+        
       }
     }
   }, []);

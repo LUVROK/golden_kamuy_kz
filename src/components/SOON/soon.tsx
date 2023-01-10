@@ -1,14 +1,12 @@
 import "./soon.scss";
 import { motion } from "framer-motion";
-import { useEffect, useRef, useLayoutEffect } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 import $ from "jquery";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
-// import "./initCanvasCursor";
 import { TweenMax, Power1 } from "gsap";
 
 const Soon = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const { scroll } = useLocomotiveScroll();
 
   useEffect(() => {
@@ -45,7 +43,7 @@ const Soon = () => {
     }
 
     function render() {
-      circle.lastX = lerp(circle.lastX, mouseX, 0.25); //Linear interpolate the vector to another vector.
+      circle.lastX = lerp(circle.lastX, mouseX, 0.25); 
       circle.lastY = lerp(circle.lastY, mouseY, 0.25);
 
       ctx.clearRect(0, 0, width, height);
@@ -98,31 +96,6 @@ const Soon = () => {
 
     init();
 
-    // document.body.style.overflow = "hidden";
-
-    // for (let i1 = 0; i1 < 140; i1++) {
-    //   const br = document.createElement("div");
-    //   br.classList.add("plusBR");
-    //   (document.querySelector(".plusesInfBlock") as HTMLElement).appendChild(br);
-
-    //   for (let i2 = 0; i2 < 50; i2++) {
-    //     const box = document.createElement("div");
-    //     box.innerHTML = "<span>+</span>";
-    //     box.style.backgroundColor = "transparent";
-    //     box.classList.add("plus");
-
-    //     box.addEventListener("mouseover", function (e) {
-    //       (document.querySelector(`.plus:nth-of-type(${(i2 + 1) * (i1 + 1) - 1})`) as HTMLElement).classList.add("Neighbours");
-    //     });
-    //     box.addEventListener("mouseout", function (e) {
-    //       (document.querySelector(`.plus:nth-of-type(${(i2 + 1) * (i1 + 1) - 1})`) as HTMLElement).classList.remove("Neighbours");
-    //     });
-
-    //     // (document.querySelector(".plusesAnim") as HTMLElement).append(box);
-    //     (document.querySelector(`.plusBR:nth-of-type(${i1 + 1})`) as HTMLElement).appendChild(box);
-    //   }
-    // }
-
     var c = document.createDocumentFragment();
 
     const element = document.querySelector(".plusesInfBlock");
@@ -162,50 +135,7 @@ const Soon = () => {
 
     buildFaixa();
 
-    // WATCH RESIZE WINDOWS
     document.addEventListener("resize", () => buildFaixa());
-
-    // setInterval(() => {
-    //   (element as HTMLElement).style.animation = "moveRightBottom 30s linear infinite";
-    // }, 1000);
-
-    //   const img = new Image();
-    //   img.src = "https://orig15.deviantart.net/8bed/f/2015/058/a/8/smb1_background_by_steamerthesteamtrain-d8jq7ea.png";
-
-    //   const canvas: any = document.getElementById("canvasSnow2");
-    //   const ctx = canvas.getContext("2d");
-
-    //   const backgroundImage = {
-    //     img: img,
-    //     x: 0,
-    //     speed: -1,
-
-    //     move: function () {
-    //       this.x += this.speed;
-    //       this.x %= canvas.width;
-    //     },
-
-    //     draw: function () {
-    //       ctx.drawImage(this.img, this.x, 0);
-    //       if (this.speed < 0) {
-    //         ctx.drawImage(this.img, this.x + canvas.width, 0);
-    //       } else {
-    //         ctx.drawImage(this.img, this.x - this.img.width, 0);
-    //       }
-    //     },
-    //   };
-
-    //   function updateCanvas() {
-    //     backgroundImage.move();
-
-    //     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    //     backgroundImage.draw();
-
-    //     requestAnimationFrame(updateCanvas);
-    //   }
-
-    //   // start calling updateCanvas once the image is loaded
-    //   img.onload = updateCanvas;
 
     var observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutationRecord) {

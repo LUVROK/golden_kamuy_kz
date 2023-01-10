@@ -76,37 +76,15 @@ function App(props: any) {
       (document.querySelector(".Wrapper") as HTMLElement).style.opacity = "0";
       (document.querySelector("nav") as HTMLElement).style.opacity = "0";
 
-      // (document.querySelector(".App") as HTMLElement).style.backgroundColor = "#000000";
-      // (document.querySelector(".canvasSnow1") as HTMLElement).style.opacity = "0";
-
       setTimeout(() => {
         setActiveSoon(!activeSoon);
       }, 1000);
-      console.log("OPEN");
     }, 500);
-
-    // console.log((document.querySelector(".Soon") as HTMLElement).style.display);
-    // console.log((document.querySelector(".Soon") as HTMLElement).style.transform);
-    // (document.querySelector(".Soon") as HTMLElement).style.display = "flex";
-    // (document.querySelector(".Soon") as HTMLElement).style.transform = "translateY(0%)";
-    // console.log((document.querySelector(".Soon") as HTMLElement).style.display);
-    // console.log((document.querySelector(".Soon") as HTMLElement).style.transform);
   }
 
   function animationCloseProfileStart() {
     setActiveSoon(!activeSoon);
-    console.log("CLOSE");
-    // (document.querySelector(".Soon") as HTMLElement).style.transform = "translateY(-100%)";
-    // setTimeout(() => {
-    //   (document.querySelector(".Soon") as HTMLElement).style.display = "none";
-    // }, 1000);
   }
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoaded(true);
-    }, 3000);
-  }, []);
 
   useEffect(() => {
     if (user) {
@@ -133,6 +111,10 @@ function App(props: any) {
   }, [props.User]);
 
   useEffect(() => {
+    setTimeout(() => {
+      setLoaded(true);
+    }, 3000);
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -155,28 +137,6 @@ function App(props: any) {
       }
     };
     animate();
-
-    // document.body.addEventListener("scroll", function () {
-    //   console.log(snowflakes);
-    //   for (let i = 0; i < snowflakes.length; i++) {
-    //     snowflakes[i].speed = snowflakes[i].speed * 5;
-    //     // snowflakes[i].draw(ctx);
-    //   }
-    // });
-
-    // $("html").mousemove(function (e) {
-    //   let xpos = e.pageX;
-    //   let ypos = e.pageY;
-
-    //   $("body").addClass("go");
-
-    //   var position = {
-    //     left: xpos,
-    //     top: ypos,
-    //   };
-
-    //   $(".pulse").css(position);
-    // });
   }, []);
 
   return (

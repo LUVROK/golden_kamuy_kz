@@ -16,7 +16,6 @@ const mapDispatchToProps = {
 };
 
 const Nav = (props: any) => {
-  const MY_PROFILE = () => {};
   const [click, setClick] = useState<Boolean>(false);
   const { scroll } = useLocomotiveScroll();
 
@@ -32,7 +31,7 @@ const Nav = (props: any) => {
 
   return (
     <nav className="navbar" data-scroll data-scroll-sticky data-scroll-target="#App">
-      <div className="right_navbar">
+      <div className="right_navbar nav_mobile-hide">
         <span>GOLDEN KAMUY</span>
       </div>
       <div className="left_navbar">
@@ -46,7 +45,7 @@ const Nav = (props: any) => {
             my portfolio
           </span>
         </div>
-        <div className="roadmap-navbar">
+        <div className="roadmap-navbar nav_mobile-hide">
           <span
             onClick={() => {
               props.CLOSE();
@@ -55,10 +54,10 @@ const Nav = (props: any) => {
             roadmap
           </span>
         </div>
-        <div className="watch_anime">
+        <div className="watch_anime nav_mobile-hide">
           <span>watch anime</span>
         </div>
-        <div className="contacts">
+        <div className="contacts nav_mobile-hide">
           <span>contacts</span>
         </div>
       </div>

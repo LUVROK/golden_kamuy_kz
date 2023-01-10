@@ -16,12 +16,18 @@
   right: 0;
   margin: auto;
   width: fit-content;
-  font-size: 52px;
+  font-size: calc(1.75vh + 1.75vw); //52.5
   font-weight: 200;
   letter-spacing: 40px;
   color: #ffffff;
   cursor: pointer;
   transition: all 0.35s ease-out;
+  @media screen and (max-width: 910px) {
+    letter-spacing: 20px;
+  }
+  @media screen and (max-width: 490px) {
+    letter-spacing: 10px;
+  }
 }
 
 .Man_Cool_He_is_right {
@@ -52,5 +58,31 @@
   height: 85vh;
   width: auto;
   z-index: 190;
+  @media screen and (max-width: 1510px) {
+    height: 70vh;
+  }
+  @media screen and (max-width: 1034px) {
+    height: 55vh;
+  }
+  @media screen and (max-width: 490px) {
+    height: 70vh;
+    width: 100vw;
+    z-index: -1;
+    opacity: 0.5;
+  }
   // transition: all 0.35s ease-out;
 }
+
+@media screen and (max-width: 1510px) {
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 490px) {
+}
+
+// @media screen and (max-width: 1510px) {
+// }
+// @media screen and (max-width: 1024px) {
+// }
+// @media screen and (max-width: 490px) {
+// }

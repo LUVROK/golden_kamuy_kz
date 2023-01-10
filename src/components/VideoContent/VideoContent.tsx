@@ -97,7 +97,7 @@ const VideoContent = (props: any) => {
           </div>
         ))}
       </div>
-      <video width="750" height="500" id="movie" src={String(golden_kamuy[activeSeason][activeVideo])} controls loop />
+      <video id="movie" src={String(golden_kamuy[activeSeason][activeVideo])} controls loop />
       <div className="seriesChoose">
         {Object.keys(golden_kamuy[activeSeason]).map((key, i) => (
           <div

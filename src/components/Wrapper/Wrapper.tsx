@@ -1,7 +1,6 @@
 import "./Wrapper.scss";
 import { useState, useEffect } from "react";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
-import { useSelector, useDispatch } from "react-redux";
 import { createSelector } from "reselect";
 import Man from "../../images/man.png";
 import backgroundBlur from "../../images/backgroundBlur.png";
@@ -14,12 +13,6 @@ type State = {
 const Wrapper = () => {
   const [click, setClick] = useState<Boolean>(false);
   const { scroll } = useLocomotiveScroll();
-
-  const countSelector = createSelector(
-    (state: State) => state.message,
-    (message) => message
-  );
-  const count = useSelector(countSelector);
 
   const HandleScroll = async (id: any) => {
     let elem = document.querySelector(id);

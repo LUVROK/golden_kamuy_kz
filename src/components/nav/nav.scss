@@ -55,3 +55,12 @@ nav .right_navbar {
 .right_navbar a {
   cursor: pointer;
 }
+
+@media screen and (max-width: 490px) {
+  .nav_mobile-hide {
+    display: none !important;
+  }
+  .my_portfolio-navbar {
+    font-size: 18px;
+  }
+}
