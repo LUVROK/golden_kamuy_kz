@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/golden_kamuy_kz/static/css/main.c24a2c42.css",
-    "main.js": "/golden_kamuy_kz/static/js/main.8bdb0b0e.js",
+    "main.css": "/golden_kamuy_kz/static/css/main.128e93ff.css",
+    "main.js": "/golden_kamuy_kz/static/js/main.4d3877a4.js",
     "static/js/787.714e2d40.chunk.js": "/golden_kamuy_kz/static/js/787.714e2d40.chunk.js",
     "static/media/Inter.ttf": "/golden_kamuy_kz/static/media/Inter.aadb65ac45347ff46699.ttf",
     "static/media/Inter-Thin.ttf": "/golden_kamuy_kz/static/media/Inter-Thin.f341ca512063c66296d1.ttf",
@@ -22,12 +22,12 @@
     "static/media/gold2.png": "/golden_kamuy_kz/static/media/gold2.2147d9aa49acd107a102.png",
     "static/media/gold1.png": "/golden_kamuy_kz/static/media/gold1.5c063274499869f28af2.png",
     "index.html": "/golden_kamuy_kz/index.html",
-    "main.c24a2c42.css.map": "/golden_kamuy_kz/static/css/main.c24a2c42.css.map",
-    "main.8bdb0b0e.js.map": "/golden_kamuy_kz/static/js/main.8bdb0b0e.js.map",
+    "main.128e93ff.css.map": "/golden_kamuy_kz/static/css/main.128e93ff.css.map",
+    "main.4d3877a4.js.map": "/golden_kamuy_kz/static/js/main.4d3877a4.js.map",
     "787.714e2d40.chunk.js.map": "/golden_kamuy_kz/static/js/787.714e2d40.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c24a2c42.css",
-    "static/js/main.8bdb0b0e.js"
+    "static/css/main.128e93ff.css",
+    "static/js/main.4d3877a4.js"
   ]
 }
