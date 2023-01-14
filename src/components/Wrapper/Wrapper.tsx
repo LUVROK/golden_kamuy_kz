@@ -47,15 +47,15 @@ const Wrapper = () => {
   return (
     <div className="Wrapper" id="Wrapper">
       <Block_About />
-      <div className="background" data-scroll data-scroll-sticky data-scroll-target="#App">
+      <div className="background" data-scroll data-scroll-sticky data-scroll-target="#page">
         <div className="watchBtn" id="watchBtn" style={{ opacity: 1 }} onClick={() => HandleScroll("#MainContent")} data-scroll data-scroll-position="top" data-scroll-speed="20">
           WATCH SERIES
         </div>
       </div>
-      <div className="Manimg" data-scroll data-scroll-sticky data-scroll-target="#App">
+      <div className="Manimg" data-scroll data-scroll-sticky data-scroll-target="#page">
         <img src={Man} alt="" className="Man_Cool_He_is_right" data-scroll data-scroll-speed="-7" data-scroll-position="left" data-scroll-direction="horizontal" />
       </div>
-      <div className="backgroundBlur" data-scroll data-scroll-sticky data-scroll-target="#App">
+      <div className="backgroundBlur" data-scroll data-scroll-sticky data-scroll-target="#page">
         <img src={backgroundBlur} alt="" className="backgroundBlur_Cool_He_is_right" />
       </div>
     </div>

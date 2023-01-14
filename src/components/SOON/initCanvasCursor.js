@@ -1,6 +1,6 @@
 import { TweenMax, Power1 } from "gsap";
 
-const canvas = document.querySelector(".js-canvas");
+const canvas = document.querySelector(".cursor-custom__canvas");
 const ctx = canvas.getContext("2d");
 
 let width = (canvas.width = window.innerWidth);

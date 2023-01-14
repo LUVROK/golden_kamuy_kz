@@ -1,4 +1,4 @@
-.Soon {
+.soon {
   position: relative;
   top: 0;
   width: 100vw;
@@ -11,7 +11,7 @@
   transition: all 1s cubic-bezier(0.76, 0, 0.24, 1);
   z-index: 9998;
 }
-.plusesAnim {
+.pluses {
   position: absolute;
   height: 150vh;
   width: 150%;
@@ -22,7 +22,7 @@
   // left: 0vw;
   transition: all 1s linear;
 }
-.plusesInfBlock {
+.pluses__block {
   position: absolute;
   top: 100%;
   top: 0;
@@ -45,7 +45,7 @@
     transform: translateY(-35%) translateX(-10%);
   }
 }
-.plusesAnim .plus {
+.pluses .plus {
   width: max-content;
   height: max-content;
   position: relative;
@@ -59,24 +59,23 @@
   // font-weight: 100;
   font-family: "Inter-Thin";
 }
-.plusesAnim .plus span {
+.pluses .plus span {
   transition: all 0.35s linear;
   transform: rotate(180deg);
   transform-origin: center;
   transform-origin: center center;
   text-align: center;
 }
-// .plusesAnim .plus:hover span {
+// .pluses .plus:hover span {
 //   transform: rotate(-90deg);
 // }
 // .Neighbours {
 //   transform: rotate(90deg);
 // }
-.canvasSnow {
+.snow-canvas {
   z-index: 1;
-  // opacity: 0;
 }
-.SoonText {
+.soon__text {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -91,50 +90,36 @@
   transition: opacity 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-.canvasSnow2 {
-  // position: absolute;
-  // width: 100%;
-  // height: 100vh;
-  // object-fit: cover;
-  // z-index: 101;
-  // top: 0vh;
-  // transition: opacity 3.5s ease-out;
-}
-
-.canvasBlock {
+.cursor-custom {
   position: absolute;
-  top: 0vh;
-  // left: 0;
   height: 100vh;
-  width: 100%;
-  z-index: 9999;
+  cursor: none;
   pointer-events: none;
-  object-fit: cover;
 }
-.js-canvas {
-  position: absolute;
+.cursor-custom__canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
   top: 0vh;
   // left: 0;
-  height: 100vh;
   width: 100%;
-  z-index: 999;
   pointer-events: none;
   object-fit: cover;
   mix-blend-mode: difference;
 }
 
-.SoonText > span {
+.soon__text > span {
   opacity: 0.15;
 }
-#S {
+#soon__text_S {
   opacity: 0.5;
   animation: opANIM1 2s linear reverse infinite;
 }
-#O {
+#soon__text_O {
   animation: opANIM3 2s linear reverse infinite;
   position: relative;
 }
-#O::after {
+#soon__text_O::after {
   width: 200px;
   height: 200px;
   top: -150%;
@@ -142,11 +127,10 @@
   opacity: 0.1;
   filter: blur(10px);
 }
-#O2 {
+#soon__text_O_2 {
   animation: opANIM2 2s linear reverse infinite;
 }
-
-#N {
+#soon__text_N {
   animation: opANIM2 2s linear reverse infinite;
 }
 

@@ -1,4 +1,4 @@
-nav {
+.header {
   position: fixed;
   width: 100%;
   height: 7.5vh;
@@ -14,7 +14,7 @@ nav {
   transition: opacity 1s ease-in-out;
 }
 
-nav .left_navbar {
+.header .navbar-links {
   position: relative;
   width: 60%;
   height: 100%;
@@ -24,16 +24,16 @@ nav .left_navbar {
   align-items: center;
 }
 
-nav .right_navbar {
+.header .navbar-logo {
   position: relative;
   width: 40%;
   display: flex;
   justify-content: flex-start;
-  left: 10%;
+  padding-left: 10%;
   align-items: center;
 }
 
-.left_navbar div {
+.navbar-links .navbar-links__link {
   position: relative;
   height: 100%;
   width: 100%;
@@ -42,25 +42,22 @@ nav .right_navbar {
   align-items: center;
 }
 
-.left_navbar div span {
+.navbar-links .navbar-links__link span {
   cursor: pointer;
   transition: all 0.35s ease-out;
 }
-.left_navbar div span:hover {
+.navbar-links .navbar-links__link span:hover {
   color: #ddb088;
 }
-.right_navbar span {
-  cursor: pointer;
-}
-.right_navbar a {
+.navbar-logo .navbar-logo__span {
   cursor: pointer;
 }
 
 @media screen and (max-width: 490px) {
-  .nav_mobile-hide {
+  .navbar-logo__span_hidden {
     display: none !important;
   }
-  .my_portfolio-navbar {
+  .navbar-links .navbar-links__link:nth-child(1) {
     font-size: 18px;
   }
 }

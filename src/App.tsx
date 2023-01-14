@@ -70,11 +70,11 @@ function App(props: any) {
     setTimeout(() => {
       (document.querySelector(".MainContent") as HTMLElement).style.pointerEvents = "none";
       (document.querySelector(".Wrapper") as HTMLElement).style.pointerEvents = "none";
-      (document.querySelector(".navbar") as HTMLElement).style.pointerEvents = "none";
+      (document.querySelector(".header") as HTMLElement).style.pointerEvents = "none";
 
       (document.querySelector(".MainContent") as HTMLElement).style.opacity = "0";
       (document.querySelector(".Wrapper") as HTMLElement).style.opacity = "0";
-      (document.querySelector("nav") as HTMLElement).style.opacity = "0";
+      (document.querySelector(".header") as HTMLElement).style.opacity = "0";
 
       setTimeout(() => {
         setActiveSoon(!activeSoon);
@@ -83,6 +83,7 @@ function App(props: any) {
   }
 
   function animationCloseProfileStart() {
+    console.log(props.openProfile);
     setActiveSoon(!activeSoon);
   }
 
@@ -155,8 +156,8 @@ function App(props: any) {
       containerRef={containerRef}
     >
       <div
-        className="App"
-        id="App"
+        className="page"
+        id="page"
         data-scroll-container
         ref={containerRef}
         style={{
@@ -164,10 +165,10 @@ function App(props: any) {
         }}
       >
         {/* <div className="pulse"></div> */}
-        <canvas ref={canvasRef} className="canvasSnow canvasSnow1" data-scroll data-scroll-sticky data-scroll-target="#App" style={{ opacity: "1" }} />
+        <canvas ref={canvasRef} className="snow-canvas" data-scroll data-scroll-sticky data-scroll-target="#page" style={{ opacity: "1" }} />
         <ScrollTriggerProxy />
-        <div className="canvasBlock" data-scroll data-scroll-sticky data-scroll-target="#App">
-          <canvas className="js-canvas" id="js-canvas"></canvas>
+        <div className="cursor-custom" data-scroll data-scroll-sticky data-scroll-target="#page">
+          <canvas className="cursor-custom__canvas" id="cursor-custom__canvas"></canvas>
         </div>
         {/* {Loaded ? null : <Loader />} */}
         {activeSoon ? (

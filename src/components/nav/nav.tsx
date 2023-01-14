@@ -30,22 +30,22 @@ const Nav = (props: any) => {
   };
 
   return (
-    <nav className="navbar" data-scroll data-scroll-sticky data-scroll-target="#App">
-      <div className="right_navbar nav_mobile-hide">
-        <span>GOLDEN KAMUY</span>
+    <nav className="header" data-scroll data-scroll-sticky data-scroll-target="#page">
+      <div className="navbar-logo">
+        <span className="navbar-logo__span navbar-logo__span_hidden">GOLDEN KAMUY</span>
       </div>
-      <div className="left_navbar">
-        <div className="my_portfolio-navbar">
+      <div className="navbar-links">
+        <div className="navbar-links__link">
           <span
             onClick={() => {
-              props.OPEN();
               handleScroll("#Wrapper");
+              props.OPEN();
             }}
           >
             my portfolio
           </span>
         </div>
-        <div className="roadmap-navbar nav_mobile-hide">
+        <div className="navbar-links__link navbar__mobile-hidden">
           <span
             onClick={() => {
               props.CLOSE();
@@ -54,10 +54,10 @@ const Nav = (props: any) => {
             roadmap
           </span>
         </div>
-        <div className="watch_anime nav_mobile-hide">
+        <div className="navbar-links__link navbar__mobile-hidden">
           <span>watch anime</span>
         </div>
-        <div className="contacts nav_mobile-hide">
+        <div className="navbar-links__link navbar__mobile-hidden">
           <span>contacts</span>
         </div>
       </div>

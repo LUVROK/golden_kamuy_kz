@@ -39,7 +39,7 @@ const Block_About = () => {
   ];
 
   return (
-    <div className="Block_About" data-scroll data-scroll-sticky data-scroll-target="#App">
+    <div className="Block_About" data-scroll data-scroll-sticky data-scroll-target="#page">
       <div
         className="Block_Aboutsticky"
         data-scroll

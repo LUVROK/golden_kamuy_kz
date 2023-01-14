@@ -11,7 +11,6 @@ const Soon = () => {
 
   useEffect(() => {
     // (document.querySelector(".Soon") as HTMLElement).style.transform = "translateY(0%)";
-    console.log("OPEN2");
     const handleScroll = (id: any) => {
       let elem = document.querySelector(id);
       scroll.scrollTo(elem, {
@@ -20,9 +19,11 @@ const Soon = () => {
         easing: [0.25, 0.0, 0.35, 1.0],
       });
     };
-    handleScroll("#Soon");
+    handleScroll("#soon");
 
-    const canvas: any = document.querySelector(".js-canvas");
+    const canvas: any = document.querySelector(".cursor-custom__canvas");
+    const canvasBlock: any = document.querySelector(".cursor-custom");
+    canvasBlock.style.zIndex = 9999;
     const ctx = canvas.getContext("2d");
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
@@ -43,7 +44,7 @@ const Soon = () => {
     }
 
     function render() {
-      circle.lastX = lerp(circle.lastX, mouseX, 0.25); 
+      circle.lastX = lerp(circle.lastX, mouseX, 0.25);
       circle.lastY = lerp(circle.lastY, mouseY, 0.25);
 
       ctx.clearRect(0, 0, width, height);
@@ -98,7 +99,7 @@ const Soon = () => {
 
     var c = document.createDocumentFragment();
 
-    const element = document.querySelector(".plusesInfBlock");
+    const element = document.querySelector(".pluses__block");
     let elementpos = (element as HTMLElement).getBoundingClientRect();
     let i1 = 0;
 
@@ -108,7 +109,7 @@ const Soon = () => {
     box.classList.add(`plus`);
 
     const br = document.createElement("div");
-    br.classList.add("plusBR");
+    br.classList.add("plus_next");
 
     const buildFaixa = () => {
       for (let i2 = 0; i2 < 50; i2++) {
@@ -134,33 +135,8 @@ const Soon = () => {
     };
 
     buildFaixa();
-
     document.addEventListener("resize", () => buildFaixa());
-
-    var observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutationRecord) {
-        var rect = (document.getElementById("js-canvas") as HTMLElement).getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.675 && rect.top > window.innerHeight * 0.45) {
-          (document.querySelector("js-canvas") as any).style.opacity = 0.5;
-        } else if (rect.top <= window.innerHeight * 0.45 && rect.top > window.innerHeight * 0.325) {
-          (document.querySelector("js-canvas") as any).style.opacity = 0.25;
-        } else if (rect.top <= window.innerHeight * 0.325) {
-          (document.querySelector("js-canvas") as any).style.opacity = 0;
-          (document.querySelector("js-canvas") as any).style.display = "none";
-          (document.querySelector("Soon") as any).style.cursor = "auto";
-        } else {
-          (document.querySelector("js-canvas") as any).style.opacity = 1;
-        }
-      });
-    });
-
-    var target = document.getElementById("js-canvas");
-    observer.observe(target as any, { attributes: true, attributeFilter: ["style"] });
   }, []);
-
-  function getRandomArbitrary(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min) + min);
-  }
 
   const container = {
     active: {
@@ -185,18 +161,16 @@ const Soon = () => {
   };
 
   return (
-    <motion.div className="Soon" id="Soon" variants={container} initial="active" animate="inactive" style={{ cursor: "none" }}>
-      <motion.div className="SoonText" variants={item}>
-        <span id="S">S</span>
-        <span id="O">O</span>
-        <span id="O2">O</span>
-        <span id="N">N</span>
+    <motion.div className="soon" id="soon" variants={container} initial="active" animate="inactive" style={{ cursor: "none" }} onClick={() => console.log(1)}>
+      <motion.div className="soon__text" variants={item}>
+        <span id="soon__text_S">S</span>
+        <span id="soon__text_O">O</span>
+        <span id="soon__text_O_2">O</span>
+        <span id="soon__text_N">N</span>
       </motion.div>
-      {/* <canvas id="canvasSnow2" className="canvasSnow2" width="800" height="400"></canvas> */}
-      <motion.div className="plusesAnim" variants={item}>
-        <div className="plusesInfBlock"></div>
+      <motion.div className="pluses" variants={item}>
+        <div className="pluses__block"></div>
       </motion.div>
-      {/* <div className="Soon_my-projects"></div> */}
     </motion.div>
   );
 };
