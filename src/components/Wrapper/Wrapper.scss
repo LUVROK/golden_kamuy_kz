@@ -9,7 +9,7 @@
   z-index: 200;
 }
 
-.watchBtn {
+.background__button {
   position: absolute;
   top: 87.5vh;
   left: 0;
@@ -36,7 +36,7 @@
   height: 100%;
 }
 
-.backgroundBlur {
+.background-blur {
   position: absolute;
   width: auto;
   height: 96vh;
@@ -46,12 +46,12 @@
   margin: auto;
   z-index: -2;
 }
-.backgroundBlur_Cool_He_is_right {
+.background-blur__img {
   position: relative;
   width: auto;
   height: 100%;
 }
-.Manimg {
+.ManImg {
   position: absolute;
   right: 0;
   bottom: 0;
